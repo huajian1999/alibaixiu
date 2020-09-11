@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 要求当前网页使用IE浏览器最高版本的内核来渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- 设置视口，视口宽度和设备一致，用户不能自行缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE9以下 支持 HTML5 元素和媒体查询（media queries）功能 
+         IE8本地打开时布局无效
+    -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- 
+        分析：
+            中、大屏幕一致，小屏幕，超小屏特殊
+            先使用col-md-*(pc端)，再根据小屏超小屏设定布局样式
+     -->
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <header class="col-md-2">
+                <div class="logo">
+                    <a href="">
+                        <!--===== 1.进入超小屏幕，logo里的图片隐藏，显示文字 =====-->
+                        <img src="./images/logo.png" alt="" class="hidden-xs">
+                        <span class="visible-xs">阿里百秀</span>
+                    </a>
+                </div>
+                <div class="nav">
+                    <ul>
+                        <!--===== 2.进入小屏，超小屏幕时同行显示 li浮动，宽20% 使用媒体查询css =====-->
+                        <!-- 图标使用bootstrap提供的组件里的Glyphicons字体图标 -->
+                        <li><a href="#" class="glyphicon glyphicon-camera">生活馆</a></li>
+                        <li><a href="#" class="glyphicon glyphicon-picture">自然汇</a></li>
+                        <li><a href="#" class="glyphicon glyphicon-phone">科技湖</a></li>
+                        <li><a href="#" class="glyphicon glyphicon-eye-open">奇趣事</a></li>
+                        <li><a href="#" class="glyphicon glyphicon-filter">美食街</a></li>
+                    </ul>
+                </div>
+            </header>
+            <article class="col-md-7">
+                <!-- 新闻 -->
+                <!-- bootstrap清除浮动的类：clearfix -->
+                <div class="news clearfix">
+                    <!--===== 3.进入超小屏，第一个li占一行，其余每行两个 =====-->
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="images/news-1.jpg" alt="">
+                                <p>22个中国最美瀑布，你去过哪一个</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news-2.jpg" alt="">
+                                <p>25个世界最迷人的城堡</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news-3.jpg" alt="">
+                                <p>闪耀的沙雕作品，转瞬即逝却仍然经典</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news-4.jpg" alt="">
+                                <p>26大世界上至今无解的自然怪象</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="images/news-5.jpg" alt="">
+                                <p>《变形金刚4》那些你不知道的制作幕后</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 发表 -->
+                <div class="publish">
+                    <!-- 小屏以上比例不变 使用col-sm-* -->
+                    <div class="row">
+                        <!-- bootstrap css 排版 标题...(和html标签可能不太一样);辅助类...(文字样式) -->
+                        <div class="col-sm-8">
+                            <h3>研究表明：大麻可能有效治疗癌症</h3>
+                            <!--===== 4.进入超小屏，只显示标题和阅读量，修改标题字号 =====-->
+                            <div class="hidden-xs">
+                                <p class="text-muted">发布于 2014-08-08 21:42</p>
+                                <p>一说到大麻（Marinol），估计大家都深恶痛绝，因为毒品给太多家庭带来悲剧，带来太多犯罪，毁了那么多人的一生，所以各个国家也严厉打击。但是，有研究表明大麻可能可以有效地治疗癌症。 哈佛大学进行了一项 研究 ，研究人员用老鼠做实验，测试了化学THC（四</p>
+                            </div>
+                            
+                            <p class="text-muted">阅读(127) 评论(35) 赞(28)<span class="hidden-xs">标签：大麻 疾病 癌症 科学发现</span></p>
+                        </div>
+                        <div class="col-sm-4 pic hidden-xs">
+                            <img src="images/news-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- bootstrap css 排版 标题...(和html标签可能不太一样);辅助类...(文字样式) -->
+                        <div class="col-sm-8">
+                            <h3>研究表明：大麻可能有效治疗癌症</h3>
+                            <!--===== 4.进入超小屏，只显示标题和阅读量，修改标题字号 =====-->
+                            <div class="hidden-xs">
+                                <p class="text-muted">发布于 2014-08-08 21:42</p>
+                                <p>一说到大麻（Marinol），估计大家都深恶痛绝，因为毒品给太多家庭带来悲剧，带来太多犯罪，毁了那么多人的一生，所以各个国家也严厉打击。但是，有研究表明大麻可能可以有效地治疗癌症。 哈佛大学进行了一项 研究 ，研究人员用老鼠做实验，测试了化学THC（四</p>
+                            </div>
+                            
+                            <p class="text-muted">阅读(127) 评论(35) 赞(28)<span class="hidden-xs">标签：大麻 疾病 癌症 科学发现</span></p>
+                        </div>
+                        <div class="col-sm-4 pic hidden-xs">
+                            <img src="images/news-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- bootstrap css 排版 标题...(和html标签可能不太一样);辅助类...(文字样式) -->
+                        <div class="col-sm-8">
+                            <h3>研究表明：大麻可能有效治疗癌症</h3>
+                            <!--===== 4.进入超小屏，只显示标题和阅读量，修改标题字号 =====-->
+                            <div class="hidden-xs">
+                                <p class="text-muted">发布于 2014-08-08 21:42</p>
+                                <p>一说到大麻（Marinol），估计大家都深恶痛绝，因为毒品给太多家庭带来悲剧，带来太多犯罪，毁了那么多人的一生，所以各个国家也严厉打击。但是，有研究表明大麻可能可以有效地治疗癌症。 哈佛大学进行了一项 研究 ，研究人员用老鼠做实验，测试了化学THC（四</p>
+                            </div>
+                            
+                            <p class="text-muted">阅读(127) 评论(35) 赞(28)<span class="hidden-xs">标签：大麻 疾病 癌症 科学发现</span></p>
+                        </div>
+                        <div class="col-sm-4 pic hidden-xs">
+                            <img src="images/news-1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- bootstrap css 排版 标题...(和html标签可能不太一样);辅助类...(文字样式) -->
+                        <div class="col-sm-8">
+                            <h3>研究表明：大麻可能有效治疗癌症</h3>
+                            <!--===== 4.进入超小屏，只显示标题和阅读量，修改标题字号 =====-->
+                            <div class="hidden-xs">
+                                <p class="text-muted">发布于 2014-08-08 21:42</p>
+                                <p>一说到大麻（Marinol），估计大家都深恶痛绝，因为毒品给太多家庭带来悲剧，带来太多犯罪，毁了那么多人的一生，所以各个国家也严厉打击。但是，有研究表明大麻可能可以有效地治疗癌症。 哈佛大学进行了一项 研究 ，研究人员用老鼠做实验，测试了化学THC（四</p>
+                            </div>
+                            
+                            <p class="text-muted">阅读(127) 评论(35) 赞(28)<span class="hidden-xs">标签：大麻 疾病 癌症 科学发现</span></p>
+                        </div>
+                        <div class="col-sm-4 pic hidden-xs">
+                            <img src="images/news-1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <aside class="col-md-3">
+                <a href="#" class="banner">
+                    <img src="images/zgboke.jpg" alt="">
+                </a>
+                <a href="#" class="hot">
+                    <span class="btn btn-primary">热搜</span>
+                    <h4 class="text-primary">欢迎加入中国博客联盟</h4>
+                    <p>这里收录了国内各个领域的优秀博客，是一个全人工编辑的的开放式博客联盟交流和展示平台......</p>
+                </a>
+            </aside>
+        </div>
+    </div>
+</body>
+</html>
